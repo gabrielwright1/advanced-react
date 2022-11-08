@@ -103,3 +103,21 @@ How do you link from page to page?
 When do you use an anchor tag?
 
 -   If we are linking to something that is not part of our website
+
+# Intro to Styled Components and CSS
+
+Styled components
+
+-   Allows us to write scoped CSS
+-   Relevant in all frameworks (Vue, Angular, etc.)
+
+How it works:
+
+-   You define your CSS in components as well
+-   If styles are re-used, then put each styled component in its own file within the styles subfolder and import the styled components as needed, and replace HTML tags with styled tags (i.e. Logo instead of h1)
+-   Otherwise, keep the styled component within the component itself to minimize number of files
+
+Benefits:
+
+1. We can scope our CSS really easily
+2. You can use JS values inside of CSS (i.e. variable thats part of state/react app)
