@@ -121,3 +121,13 @@ Benefits:
 
 1. We can scope our CSS really easily
 2. You can use JS values inside of CSS (i.e. variable thats part of state/react app)
+
+# Global Styles, Typography, Layout Styles
+
+How do we create base (i.e. colors, styles) styles?
+
+-   Create a GlobalStyles component using 'createGlobalStyle' from styled components
+-   Setup CSS variables on the html or :root selectors for colors, max width, box shadow
+-   Create an @font-face selector for font details
+-   Within the body, set the font-family with our new font, and the '-app' autocompletion font stack as the fallback
+-   Apply the styles by adding a <GlobalStyles /> component to the page
