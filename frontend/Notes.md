@@ -91,3 +91,15 @@ To override the default Document (can be class/functional):
 
 -   Create an \_document.js file inside the pages folder
 -   Create an Html, Head, Body, Main, NextScript tags (boilerplate)
+
+# Creating our Header and Nav components
+
+How do you link from page to page?
+
+-   Use a <Link> tag (NextJS) which we can import from 'next/link' rather than an <a> tag
+-   Set up a Nav component containing all of the links
+-   Import Nav into our Header (which will end up in our Page)
+
+When do you use an anchor tag?
+
+-   If we are linking to something that is not part of our website
