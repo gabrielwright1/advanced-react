@@ -137,8 +137,26 @@ How do we create base (i.e. colors, styles) styles?
 Instances where we hook into the Router:
 
 -   Listen for events
--   Programmatically change the page
+-   Programmatically change the page (buy something and load order page)
 
 Package for loader animation:
 
 -   NProgress
+
+# Fixing Styled Component Flicker on Server Rendering
+
+When you see an error "Warning: Prop "className" did not match.":
+
+-   The server renders it one way, the client renders it another way
+-   This occurs because styled components is creating random IDs for components and when it hits the frontend, it creates a new random ID
+-   When you reload frequently, styling doesnt apply (flicker), we need to render the styles on the server
+
+To fix the issue:
+
+-   Adapt TS logic: <https://styled-components.com/docs/advanced#with-babel>, it uses getInitialProps in the \_document.js to accept context, collect styles from each component, and render them on the server
+
+If still getting a wierd error:
+
+-   Kill the build
+-   Find the .next folder cache, delete it
+-   Restart build
