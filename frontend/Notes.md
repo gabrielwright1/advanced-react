@@ -131,3 +131,14 @@ How do we create base (i.e. colors, styles) styles?
 -   Create an @font-face selector for font details
 -   Within the body, set the font-family with our new font, and the '-app' autocompletion font stack as the fallback
 -   Apply the styles by adding a <GlobalStyles /> component to the page
+
+# Visualizing Router Changes
+
+Instances where we hook into the Router:
+
+-   Listen for events
+-   Programmatically change the page
+
+Package for loader animation:
+
+-   NProgress
