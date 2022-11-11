@@ -50,3 +50,11 @@ What are lists?
 Why use named exports?
 
 - It makes auto-import a bit more consistent
+
+# Uploading Product Images
+
+Why use Cloudinary?
+
+- Resizes things based on width/height
+- Changes filetypes from PNG to WebP
+- Connects to Next.js image tag

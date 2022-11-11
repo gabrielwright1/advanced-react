@@ -1,4 +1,5 @@
 import 'dotenv/config';
+
 import { config, createSchema } from '@keystone-next/keystone/schema';
 import { createAuth } from '@keystone-next/auth';
 import {
@@ -6,6 +7,7 @@ import {
   statelessSessions,
 } from '@keystone-next/keystone/session';
 import { User } from './schemas/User';
+import { ProductImage } from './schemas/ProductImage';
 import { Product } from './schemas/Product';
 
 const databaseURL =
@@ -44,6 +46,7 @@ export default withAuth(
       // Schema items go in here
       User,
       Product,
+      ProductImage,
     }),
     ui: {
       // Show the UI only for people who pass this test
