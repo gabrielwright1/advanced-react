@@ -4,37 +4,37 @@
 
 1. React
 
-- Library for building user interfaces
-- Takes data, puts them into templates, renders them to DOM
-- As data updates, updates the page
+-   Library for building user interfaces
+-   Takes data, puts them into templates, renders them to DOM
+-   As data updates, updates the page
 
 2. Next.js
 
-- Framework for React
-- Adds: routing, linking, pages, static rendering, server rendering, images
+-   Framework for React
+-   Adds: routing, linking, pages, static rendering, server rendering, images
 
 3. Apollo Client
 
-- Interface with GraphQL API
-- Adds: data loading, caching, loading states, error states
+-   Interface with GraphQL API
+-   Adds: data loading, caching, loading states, error states
 
 4. Styled Components
 
-- Modular/scoped CSS in React applications
-- Adds: pagination, reusable styles
-- Applicable to other CSS/JS frameworks
+-   Modular/scoped CSS in React applications
+-   Adds: pagination, reusable styles
+-   Applicable to other CSS/JS frameworks
 
 ## Backend
 
 1. Keystone.js
 
-- Headless CMS - allows us to login and interface with our data, datatypes, photos, etc.
-- Gives us a GraphQL API to query
+-   Headless CMS - allows us to login and interface with our data, datatypes, photos, etc.
+-   Gives us a GraphQL API to query
 
 2. Apollo
 
-- Enables us to make GraphQL queries (CRUD)
-- Fetches and injects data into our React App
+-   Enables us to make GraphQL queries (CRUD)
+-   Fetches and injects data into our React App
 
 3. Node.js
 
@@ -44,78 +44,78 @@
 
 Start server:
 
-- npm run dev
+-   npm run dev
 
 Setup the pages:
 
-- Each page gets an index.js file which exports a React function which shows up on page
-- Uses file system based routing (rather than config based routing i.e. ReactRouter)
-- Enables hot-reloading for JS/CSS (doesn't need to restart server)
-- Nice error messages (make sure to name each React function)
+-   Each page gets an index.js file which exports a React function which shows up on page
+-   Uses file system based routing (rather than config based routing i.e. ReactRouter)
+-   Enables hot-reloading for JS/CSS (doesn't need to restart server)
+-   Nice error messages (make sure to name each React function)
 
 Server rendered (opt-in):
 
-- If you go to a NextJS website and view source you would see all the HTML for the rendered production version which React rehydrates on the frontend
-- Good for SEO, or if someone has JS turned off
+-   If you go to a NextJS website and view source you would see all the HTML for the rendered production version which React rehydrates on the frontend
+-   Good for SEO, or if someone has JS turned off
 
 Static rendered (opt-in):
 
-- Pre-rendered at build time so that they load really quickly
+-   Pre-rendered at build time so that they load really quickly
 
 Data fetching hooks (covered in course):
 
-- getStaticProps
-- getServerSideProps
-- getInitialProps
+-   getStaticProps
+-   getServerSideProps
+-   getInitialProps
 
 # Creating a Page Layout Components
 
 How pages work:
 
-- All of the HTML elements in the page gets dumped into the body
+-   All of the HTML elements in the page gets dumped into the body
 
 To create a layout component (i.e. <head>, <nav>) which shows up on every page:
 
-- Import a page component, which we will use to wrap our pages
-- Pass the children as props
-- Set up the prop types
+-   Import a page component, which we will use to wrap our pages
+-   Pass the children as props
+-   Set up the prop types
 
 To override the default App:
 <https://nextjs.org/docs/advanced-features/custom-app>
 
-- Create an \_app.js file inside the pages folder, spread pageProps into the Component prop which is passed into MyApp component
-- Kill/restart frontend dev build
+-   Create an \_app.js file inside the pages folder, spread pageProps into the Component prop which is passed into MyApp component
+-   Kill/restart frontend dev build
 
 To override the default Document (can be class/functional):
 <https://nextjs.org/docs/advanced-features/custom-document>
 
-- Create an \_document.js file inside the pages folder
-- Create an Html, Head, Body, Main, NextScript tags (boilerplate)
+-   Create an \_document.js file inside the pages folder
+-   Create an Html, Head, Body, Main, NextScript tags (boilerplate)
 
 # Creating our Header and Nav components
 
 How do you link from page to page?
 
-- Use a <Link> tag (NextJS) which we can import from 'next/link' rather than an <a> tag
-- Set up a Nav component containing all of the links
-- Import Nav into our Header (which will end up in our Page)
+-   Use a <Link> tag (NextJS) which we can import from 'next/link' rather than an <a> tag
+-   Set up a Nav component containing all of the links
+-   Import Nav into our Header (which will end up in our Page)
 
 When do you use an anchor tag?
 
-- If we are linking to something that is not part of our website
+-   If we are linking to something that is not part of our website
 
 # Intro to Styled Components and CSS
 
 Styled components
 
-- Allows us to write scoped CSS
-- Relevant in all frameworks (Vue, Angular, etc.)
+-   Allows us to write scoped CSS
+-   Relevant in all frameworks (Vue, Angular, etc.)
 
 How it works:
 
-- You define your CSS in components as well
-- If styles are re-used, then put each styled component in its own file within the styles subfolder and import the styled components as needed, and replace HTML tags with styled tags (i.e. Logo instead of h1)
-- Otherwise, keep the styled component within the component itself to minimize number of files
+-   You define your CSS in components as well
+-   If styles are re-used, then put each styled component in its own file within the styles subfolder and import the styled components as needed, and replace HTML tags with styled tags (i.e. Logo instead of h1)
+-   Otherwise, keep the styled component within the component itself to minimize number of files
 
 Benefits:
 
@@ -126,55 +126,80 @@ Benefits:
 
 How do we create base (i.e. colors, styles) styles?
 
-- Create a GlobalStyles component using 'createGlobalStyle' from styled components
-- Setup CSS variables on the html or :root selectors for colors, max width, box shadow
-- Create an @font-face selector for font details
-- Within the body, set the font-family with our new font, and the '-app' autocompletion font stack as the fallback
-- Apply the styles by adding a <GlobalStyles /> component to the page
+-   Create a GlobalStyles component using 'createGlobalStyle' from styled components
+-   Setup CSS variables on the html or :root selectors for colors, max width, box shadow
+-   Create an @font-face selector for font details
+-   Within the body, set the font-family with our new font, and the '-app' autocompletion font stack as the fallback
+-   Apply the styles by adding a <GlobalStyles /> component to the page
 
 # Visualizing Router Changes
 
 Instances where we hook into the Router:
 
-- Listen for events
-- Programmatically change the page (buy something and load order page)
+-   Listen for events
+-   Programmatically change the page (buy something and load order page)
 
 Package for loader animation:
 
-- NProgress
+-   NProgress
 
 # Fixing Styled Component Flicker on Server Rendering
 
 When you see an error "Warning: Prop "className" did not match.":
 
-- The server renders it one way, the client renders it another way
-- This occurs because styled components is creating random IDs for components and when it hits the frontend, it creates a new random ID
-- When you reload frequently, styling doesnt apply (flicker), we need to render the styles on the server
+-   The server renders it one way, the client renders it another way
+-   This occurs because styled components is creating random IDs for components and when it hits the frontend, it creates a new random ID
+-   When you reload frequently, styling doesnt apply (flicker), we need to render the styles on the server
 
 To fix the issue:
 
-- Adapt TS logic: <https://styled-components.com/docs/advanced#with-babel>, it uses getInitialProps in the \_document.js to accept context, collect styles from each component, and render them on the server
+-   Adapt TS logic: <https://styled-components.com/docs/advanced#with-babel>, it uses getInitialProps in the \_document.js to accept context, collect styles from each component, and render them on the server
 
 If still getting a wierd error:
 
-- Kill the build
-- Find the .next folder cache, delete it
-- Restart build
+-   Kill the build
+-   Find the .next folder cache, delete it
+-   Restart build
 
 # Intro to Apollo Client
 
 What does it do?
 
-- Talks to GraphQL API
-- Handles: Queries/Mutations, Caching, Errors
+-   Talks to GraphQL API
+-   Handles: Queries/Mutations, Caching, Errors
 
 How does it work?
 
-- Apollo Client is made up of links (see withData file in lib folder)
-- Each link is responsible for handling how to deal with outgoing requests to get/update data, responses, caches
-- Wrapped up in Apollo-Boost package (excl. image uploads - we need createUploadLink package for this to work)
-- The Apollo Client config (see lib/withData.js) is mostly boilerplate
+-   Apollo Client is made up of links (see withData file in lib folder)
+-   Each link is responsible for handling how to deal with outgoing requests to get/update data, responses, caches
+-   Wrapped up in Apollo-Boost package (excl. image uploads - we need createUploadLink package for this to work)
+-   The Apollo Client config (see lib/withData.js) is mostly boilerplate
 
 createUploadLink method explained (see createClient in lib/withData.js):
 
-- We ensure that the client server-side renders the UI in a logged-in state by passing along the 'headers' with each request (as a cookie), rather than saving the JWT to localstorage, because localstorage can't be sent to the server
+-   We ensure that the client server-side renders the UI in a logged-in state by passing along the 'headers' with each request (as a cookie), rather than saving the JWT to localstorage, because localstorage can't be sent to the server
+
+How cache works in browser:
+
+-   As you click between pages, the browser add/pulls from the cache
+-   If you hard refresh the page, the cache is lost
+
+What are type policies:
+
+-   TBD - Find out later
+
+What is the restore method?
+
+-   Restores any initial state (if it exists)
+-   Uses data from the Apollo Client server to hydrate the frontend Apollo Client
+
+What does the package withApollo do?
+
+-   Allows us to crawl our pages/components
+-   Identify queries (i.e. products, users)
+-   Waits for fetch to complete before sending the HTML from server to client
+
+What does withData do?
+
+-   Once we set up our app to be wrapped in the Apollo provider
+-   We use the withData function to wrap our app
