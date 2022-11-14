@@ -58,3 +58,31 @@ Why use Cloudinary?
 - Resizes things based on width/height
 - Changes filetypes from PNG to WebP
 - Connects to Next.js image tag
+
+Creating two-way data relationships:
+
+- Create a product field on the product image, create a ref to product datatype
+- Create a photo field on the product, create a ref to the product image
+
+Creating views:
+
+- Within the ProductImage.ts file, add a ui property and set the listView's initialColumns to an array containing fields (this will impact what is shown in the Keystone dashboard)
+
+# Inserting Seed Data
+
+Why is this useful?
+
+- If we're debugging 'delete' mutations and we need sample data to fill the database using a command
+
+How to set it up?
+
+- Create a seed data and index.ts file in a seed folder
+- In the keystone.ts file, add an onConnect method to the db config
+- In the onConnect method, add logic to check for seed data in the process arguments, if so, run the insertSeedData function exposed in the index.ts file
+- In package.json, create a seed data command under scripts which calls the --seed-data flag when we run the server with keystone-next
+
+To create your own products seed file:
+
+- Add products/images to the keystone dashboard
+- Open MongoDB Compass, find the list of products, export full collection, to JSON
+- Use the export to fill in the products in the data.ts file
