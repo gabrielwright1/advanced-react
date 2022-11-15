@@ -215,3 +215,7 @@ How to quickly navigate to a file:
 Where to put utility functions:
 
 -   Within the lib folder
+
+How to handle forms?
+
+-   When you don't need all the bells/whistles of a form library, create a useForm hook for syncing state of inputs, store it in the lib folder
