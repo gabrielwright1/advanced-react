@@ -155,7 +155,7 @@ To fix the issue:
 
 -   Adapt TS logic: <https://styled-components.com/docs/advanced#with-babel>, it uses getInitialProps in the \_document.js to accept context, collect styles from each component, and render them on the server
 
-If still getting a wierd error:
+# Wierd errors related to server/client ids mismatching
 
 -   Kill the build
 -   Find the .next folder cache, delete it
@@ -203,3 +203,15 @@ What does withData do?
 
 -   Once we set up our app to be wrapped in the Apollo provider
 -   We use the withData function to wrap our app
+-   The 'restore' method restores the initial state using the SSR'd HTML sent from the server (render on server, rehydrate on client)
+
+# Fetching Data, Hooks, Displaying
+
+How to quickly navigate to a file:
+
+-   Search: CTRL + SHIFT + F
+-   QuickLink: HOLD CTRL + Click file name
+
+Where to put utility functions:
+
+-   Within the lib folder

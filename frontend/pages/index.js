@@ -1,7 +1,2 @@
-export default function IndexPage() {
-  return (
-    <>
-      <p>Hello!</p>
-    </>
-  );
-}
+// make index.js the same as products
+export { default } from './products';
