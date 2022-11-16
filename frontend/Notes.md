@@ -209,8 +209,9 @@ What does withData do?
 
 How to quickly navigate to a file:
 
--   Search: CTRL + SHIFT + F
+-   Search filestructure: CTRL + SHIFT + F
 -   QuickLink: HOLD CTRL + Click file name
+-   Open searchbar: CTRL + T
 
 Where to put utility functions:
 
@@ -219,3 +220,10 @@ Where to put utility functions:
 How to handle forms?
 
 -   When you don't need all the bells/whistles of a form library, create a useForm hook for syncing state of inputs, store it in the lib folder
+
+# Form Styling
+
+How to show loading animation?
+
+-   Leverage the 'aria-busy=true' tag to represent when something is loading and use it to play a loader animation
+-   Use a fieldset to disable multiple elements of the form at once
