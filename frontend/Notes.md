@@ -227,3 +227,17 @@ How to show loading animation?
 
 -   Leverage the 'aria-busy=true' tag to represent when something is loading and use it to play a loader animation
 -   Use a fieldset to disable multiple elements of the form at once
+
+# Creating products using mutations
+
+What is the useMutation hook?
+
+-   Returns a tuple containing two values: 1) Mutate function, 2) Mutation result object {data, error, loading}
+
+What is the useQuery hook?
+
+-   Returns an object containing results {data, error, loading}
+
+What is a nested create?
+
+-   It allows us to create something like a photo and a product at the same time in a mutation (i.e. photo: {create: {image: $image, altText: $name}})

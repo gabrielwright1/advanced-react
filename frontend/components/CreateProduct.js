@@ -1,17 +1,62 @@
+import { gql, useMutation } from '@apollo/client';
 import useForm from '../lib/useForm';
+import DisplayError from './ErrorMessage';
 import Form from './styles/Form';
 
+const CREATE_PRODUCT_MUTATION = gql`
+  mutation CREATE_PRODUCT_MUTATION(
+    # variables
+    $name: String!
+    $description: String!
+    $price: Int!
+    $image: Upload
+  ) {
+    createProduct(
+      # mutations
+      data: {
+        name: $name
+        description: $description
+        price: $price
+        status: "AVAILABLE"
+        photo: { create: { image: $image, altText: $name } }
+      }
+    ) {
+      # results
+      id
+      price
+      description
+    }
+  }
+`;
+
 export default function CreateProduct() {
-  const { inputs, handleChange, handleSubmit, clearForm, resetForm } = useForm({
+  const { inputs, handleChange, clearForm, resetForm } = useForm({
     // initial state
     image: '',
     name: 'Nice Shoes',
     price: 3412,
     description: 'These are the best shoes',
   });
+
+  const [createProduct, { loading, error, data }] = useMutation(
+    CREATE_PRODUCT_MUTATION,
+    {
+      variables: inputs,
+    }
+  );
   return (
-    <Form onSubmit={handleSubmit}>
-      <fieldset>
+    <Form
+      onSubmit={async (e) => {
+        e.preventDefault();
+        console.log(inputs);
+        //  Submit the inputfields to the backend
+        const res = await createProduct();
+        console.log(res);
+        clearForm();
+      }}
+    >
+      <DisplayError error={error} />
+      <fieldset disabled={loading} aria-busy={loading}>
         <label htmlFor="image">
           Image
           <input

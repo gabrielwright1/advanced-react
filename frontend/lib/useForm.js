@@ -40,17 +40,11 @@ export default function useForm(initial = {}) {
     setInputs(blankState);
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log(inputs);
-  }
-
   // return the things we want to surface from this custom hook
   return {
     inputs,
     handleChange,
     resetForm,
     clearForm,
-    handleSubmit,
   };
 }
