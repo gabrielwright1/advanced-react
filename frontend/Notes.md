@@ -257,3 +257,14 @@ How to programatically change the page:
 
 -   Import Router from next.js
 -   Use the 'push' method to make the browser change the URL pathname
+
+# Displaying Single Items, Routing, and SEO
+
+What is the [id].js file?
+
+-   Uses a template for anything that matches the pattern '/product/...', this is specific to Next.js
+
+What is the significance of the 'SingleProduct' component?
+
+-   Given that it has a built-in GraphQL query, it allows us to put the component wherever we want it will know details about a product as long we pass it an id from the database
+-   It will also know how to display the data (data, loading, error, etc.)
