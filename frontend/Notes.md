@@ -250,3 +250,10 @@ What is an 'optimistic update'?
 -   Shows the user that the post was successful (i.e. posting a tweet) eventhough it may take a moment to update on the server side.
 -   Followers will see the update on their next network refresh
 -   Alternative: Refetch the query after the mutation, which can be specified as part of the useMutation hook
+
+# Changing page after product creation
+
+How to programatically change the page:
+
+-   Import Router from next.js
+-   Use the 'push' method to make the browser change the URL pathname
