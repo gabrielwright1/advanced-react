@@ -241,3 +241,12 @@ What is the useQuery hook?
 What is a nested create?
 
 -   It allows us to create something like a photo and a product at the same time in a mutation (i.e. photo: {create: {image: $image, altText: $name}})
+
+# Refetching queries after a successful mutation
+
+What is an 'optimistic update'?
+
+-   Manually inject a new mutation into the cache so that it triggers a refresh on the frontend
+-   Shows the user that the post was successful (i.e. posting a tweet) eventhough it may take a moment to update on the server side.
+-   Followers will see the update on their next network refresh
+-   Alternative: Refetch the query after the mutation, which can be specified as part of the useMutation hook
