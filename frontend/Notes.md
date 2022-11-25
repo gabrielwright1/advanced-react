@@ -290,3 +290,10 @@ Steps required:
 2. Allow for dynamic routing
 3. Filter the products for the current page
 4. Deal with cache invalidation
+
+# Querying current user
+
+What is a union?
+
+-   If we query for authenticatedItem, it returns two different types
+-   Therefore, we need to use the '... on' syntax in GraphQL to specify which properties to return from each subtype (i.e. query Media { ... on TvShow { episodeCount } ... on Movie { time }})
