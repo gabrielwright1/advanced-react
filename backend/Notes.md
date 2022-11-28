@@ -86,3 +86,14 @@ To create your own products seed file:
 - Add products/images to the keystone dashboard
 - Open MongoDB Compass, find the list of products, export full collection, to JSON
 - Use the export to fill in the products in the data.ts file
+
+# Emails
+
+What is a transporter?
+
+- It allows us to hook into an SMTP API and send out emails
+- When sending an email in dev, use a fake service (i.e. Mailtrap or Ethereal + PostMark)
+
+How to create an interface?
+
+- Using the response from the fake SMTP, paste it into 'https://jvilk.com/MakeTypes/' as a string, and convert into a Typescript Interface which we can use in the 'mail.ts' file to create the MailResponse
