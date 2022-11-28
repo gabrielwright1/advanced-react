@@ -297,3 +297,14 @@ What is a union?
 
 -   If we query for authenticatedItem, it returns two different types
 -   Therefore, we need to use the '... on' syntax in GraphQL to specify which properties to return from each subtype (i.e. query Media { ... on TvShow { episodeCount } ... on Movie { time }})
+
+# Authentication
+
+When sending example emails:
+
+-   Use the domain @example.com, it is set up for test purposes and will keep you from accidentally sending someone an email
+
+What to do when you get a bunch of uncaught errors in auth?
+
+-   Given that we're using the useMutation hook which stores the error in the {error, data, loading}, we can avoid crashing the app by replacing the signup method with
+    'const res = await signup().catch(console.error);'
