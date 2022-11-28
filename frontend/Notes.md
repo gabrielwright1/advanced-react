@@ -308,3 +308,18 @@ What to do when you get a bunch of uncaught errors in auth?
 
 -   Given that we're using the useMutation hook which stores the error in the {error, data, loading}, we can avoid crashing the app by replacing the signup method with
     'const res = await signup().catch(console.error);'
+
+# Reset Password flow
+
+How it works?
+
+-   Backend generates a random token
+-   You're emailed a link with the token in the URL
+-   When you try to reset the password, you pass in your email, new password, your token, and checks that your token has been issued in the last half/hour
+
+How to set up the 'Request Reset' mutation?
+
+-   Open up the keystone.ts file in the backend
+-   In the withAuth method, add a property for 'passwordResetLink'
+-   Create a mutation using the 'sendUserPasswordResetLink' field which returns a code/message
+-   When the frontend form triggers the mutation, it returns null and logs the token to the server console

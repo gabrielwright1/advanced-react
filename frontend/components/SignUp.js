@@ -47,7 +47,7 @@ export default function SignUp() {
       <h2>Sign Up for An Account</h2>
       <Error error={error} />
       <fieldset>
-        <label htmlFor="email">
+        <label htmlFor="name">
           Your Name
           <input
             type="text"
