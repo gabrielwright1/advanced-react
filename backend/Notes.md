@@ -97,3 +97,8 @@ What is a transporter?
 How to create an interface?
 
 - Using the response from the fake SMTP, paste it into 'https://jvilk.com/MakeTypes/' as a string, and convert into a Typescript Interface which we can use in the 'mail.ts' file to create the MailResponse
+
+# Adding to cart logic
+
+- If we add two of the same item, we want the cart to increment the quantity, rather than create a new item
+- To do this, we need to extend the graphQL schema to write a custom mutation
