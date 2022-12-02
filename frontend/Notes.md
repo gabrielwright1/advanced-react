@@ -323,3 +323,16 @@ How to set up the 'Request Reset' mutation?
 -   In the withAuth method, add a property for 'passwordResetLink'
 -   Create a mutation using the 'sendUserPasswordResetLink' field which returns a code/message
 -   When the frontend form triggers the mutation, it returns null and logs the token to the server console
+
+# React Context
+
+What is it?
+
+-   It allows us to define data (local state) and functionality (update functions) at a very high level
+-   Access the data/functionality at much lower levels without having to pass via props
+
+How does it work?
+
+-   It involves information being passed between a provider (context) and a consumer (useContext)
+-   We write a custom hook which leverages the useContext hook to connect our component to our local state provider
+-   You can create helper functions within the provider, and expose them via props
