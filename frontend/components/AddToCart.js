@@ -15,6 +15,7 @@ export default function AddToCart({ id }) {
     variables: { id },
     refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
+
   return (
     <button disabled={loading} onClick={addToCart} type="button">
       Add {loading && 'ing'} to Cart

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import calcTotalPrice from '../lib/calcTotalPrice';
 import { useCart } from '../lib/cartState';
 import formatMoney from '../lib/formatMoney';
+import RemoveFromCart from './RemoveFromCart';
 import CartStyles from './styles/CartStyles';
 import CloseButton from './styles/CloseButton';
 import Supreme from './styles/Supreme';
@@ -33,12 +34,13 @@ function CartItem({ cartItem }) {
       <div>
         <h3>{product.name}</h3>
         <p>
-          {formatMoney(product.price * cartItem.quantity)} -
+          {formatMoney(product.price * cartItem.quantity)} =
           <em>
             {cartItem.quantity} &times; {formatMoney(product.price)}
           </em>
         </p>
       </div>
+      <RemoveFromCart id={cartItem.id} />
     </CartItemStyles>
   );
 }
