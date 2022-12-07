@@ -336,3 +336,9 @@ How does it work?
 -   It involves information being passed between a provider (context) and a consumer (useContext)
 -   We write a custom hook which leverages the useContext hook to connect our component to our local state provider
 -   You can create helper functions within the provider, and expose them via props
+
+# Search Functionality
+
+Library used:
+
+-   Downshift.js

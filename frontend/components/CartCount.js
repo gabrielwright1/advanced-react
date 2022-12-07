@@ -42,12 +42,6 @@ const AnimationStyles = styled.span`
 `;
 
 export default function CartCount({ count }) {
-  const { openCart, closeCart } = useCart();
-  useEffect(() => {
-    if (count > 0) openCart();
-    else closeCart();
-  }, [count]);
-
   return (
     <AnimationStyles>
       <TransitionGroup>
