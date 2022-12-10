@@ -10,6 +10,8 @@ import { User } from './schemas/User';
 import { ProductImage } from './schemas/ProductImage';
 import { Product } from './schemas/Product';
 import { CartItem } from './schemas/CartItem';
+import { OrderItem } from './schemas/OrderItem';
+import { Order } from './schemas/Order';
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
 import { extendGraphqlSchema } from './mutations/index';
@@ -65,6 +67,8 @@ export default withAuth(
       Product,
       ProductImage,
       CartItem,
+      OrderItem,
+      Order,
     }),
     // allows us to write custom mutation/resolvers
     extendGraphqlSchema,
