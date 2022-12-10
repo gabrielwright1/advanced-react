@@ -1,5 +1,13 @@
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
+import styled from 'styled-components';
+
+const DeleteButtonStyles = styled.button`
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 const DELETE_PRODUCT_MUTATION = gql`
   mutation DELETE_PRODUCT_MUTATION($id: ID!) {
@@ -25,7 +33,7 @@ export default function DeleteProduct({ id, children }) {
     }
   );
   return (
-    <button
+    <DeleteButtonStyles
       type="button"
       disabled={loading}
       onClick={() => {
@@ -37,6 +45,6 @@ export default function DeleteProduct({ id, children }) {
       }}
     >
       {children}
-    </button>
+    </DeleteButtonStyles>
   );
 }
