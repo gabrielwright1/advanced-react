@@ -13,7 +13,7 @@ export const Order = list({
     label: virtual({
       graphQLReturnType: 'String',
       resolver(item) {
-        return `WES IS COOL ${formatMoney(item.total)}`;
+        return `${formatMoney(item.total)}`;
       },
     }),
     total: integer(),
