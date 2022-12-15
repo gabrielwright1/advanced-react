@@ -79,10 +79,9 @@ export default withAuth(
       // Show the UI only for people who pass this test
       isAccessAllowed: ({ session }) => !!session?.data, // checks if session and session.data exist, !! makes it boolean
     },
-    // TODO: Add session values here
     session: withItemData(statelessSessions(sessionConfig), {
       // GraphQL Query - passed along with every request
-      User: `id name email role ${permissionsList.join(' ')}`,
+      User: `id name email role {${permissionsList.join(' ')}}`,
     }),
   })
 );
