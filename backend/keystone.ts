@@ -12,6 +12,8 @@ import { Product } from './schemas/Product';
 import { CartItem } from './schemas/CartItem';
 import { OrderItem } from './schemas/OrderItem';
 import { Order } from './schemas/Order';
+import { permissionsList } from './schemas/fields';
+import { Role } from './schemas/Role';
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
 import { extendGraphqlSchema } from './mutations/index';
@@ -69,6 +71,7 @@ export default withAuth(
       CartItem,
       OrderItem,
       Order,
+      Role,
     }),
     // allows us to write custom mutation/resolvers
     extendGraphqlSchema,
@@ -79,7 +82,7 @@ export default withAuth(
     // TODO: Add session values here
     session: withItemData(statelessSessions(sessionConfig), {
       // GraphQL Query - passed along with every request
-      User: 'id name email',
+      User: `id name email role ${permissionsList.join(' ')}`,
     }),
   })
 );
