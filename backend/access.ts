@@ -32,18 +32,38 @@ export const rules = {
     if (!isSignedIn({ session })) {
       return false;
     }
+  },
+  canOrder({ session }: ListAccessArgs) {
+    if (!isSignedIn({ session })) {
+      return false;
+    }
     // 1. Do they have the permission of canManageProducts
     if (permissions.canManageProducts({ session })) {
       return true;
     }
-    // 2. If not, do they own this item (this binds to 'where' clause)?
+    // 2. Otherwise, use the 'where' clause
     return { user: { id: session.itemId } };
   },
-  canReadProducts({ session }: ListAccessArgs) {
-    if (permissions.canManageProducts({ session })) {
-      return true; // They can read everything!
+  canManageOrderItems({ session }: ListAccessArgs) {
+    if (!isSignedIn({ session })) {
+      return false;
     }
-    // They should only see avaialble products (this binds the 'where' clause)
+    // 1. Do they have the permission of canManageProducts
+    if (permissions.canManageProducts({ session })) {
+      return true;
+    }
+    // 2. Otherwise, use the 'where' clause
+    return { order: { user: { id: session.itemId } } };
+  },
+  canReadProducts({ session }: ListAccessArgs) {
+    if (!isSignedIn({ session })) {
+      return false;
+    }
+    // 1. Do they have the permission of canManageProducts
+    if (permissions.canManageProducts({ session })) {
+      return true;
+    }
+    // 2. Otherwise, use the 'where' clause
     return { status: 'AVAILABLE' };
   },
 };
