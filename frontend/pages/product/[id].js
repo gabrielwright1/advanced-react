@@ -1,5 +1,10 @@
+import PleaseSignIn from '../../components/PleaseSignIn';
 import SingleProduct from '../../components/SingleProduct';
 
 export default function SingleProductPage({ query }) {
-  return <SingleProduct id={query.id} />;
+  return (
+    <PleaseSignIn>
+      <SingleProduct id={query.id} />
+    </PleaseSignIn>
+  );
 }
