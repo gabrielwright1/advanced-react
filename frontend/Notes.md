@@ -364,3 +364,10 @@ Access
 - permissions - yes/no
 - filter functions - query a subset
   { where: user: {id: ID}}
+
+# Testing
+
+About Jest:
+
+- Jest watches your git commit and re-runs on files that have changes
+- Jest (extension) runs the tests in the IDE rather than terminal (this may be something that I use in the future)
