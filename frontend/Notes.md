@@ -379,3 +379,8 @@ React Testing Library:
 - Utilize the 'debug' method to inspect what is rendered in the console
 - Utilize 'screen' object similarly to how we use the 'Window' in the browser to find text, tags, etc.
 - Utilize the 'container' object similarly to how we use 'document' to leverage query selectors
+
+Snapshot Testing:
+
+- Given the same inputs, the rendered component should match the snapshot
+- When a change is made to the UI, make sure to update the snapshots accordingly (using methods like 'toMatchSnapshot' from Jest)
