@@ -372,3 +372,10 @@ About Jest:
 - Jest watches your git commit and re-runs on files that have changes
 - Jest (extension) runs the tests in the IDE rather than terminal (this may be something that I use in the future)
 - Jest can be set to watch mode to run everytime you change the test files
+
+React Testing Library:
+
+- Wrap a 'MockedProvider' around the component to provide context
+- Utilize the 'debug' method to inspect what is rendered in the console
+- Utilize 'screen' object similarly to how we use the 'Window' in the browser to find text, tags, etc.
+- Utilize the 'container' object similarly to how we use 'document' to leverage query selectors
